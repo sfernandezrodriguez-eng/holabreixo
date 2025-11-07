@@ -1,0 +1,3 @@
+superficie
+volumen
+generatriz
