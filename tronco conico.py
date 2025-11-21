@@ -14,9 +14,10 @@ class TroncoConico (Cono):
     def obtenerSupercifieTR(self,radio2,altura):
         area = math.pi*self.radio**2+math.pi*self.radio2**2+math.pi*(self.radio+radio2)
         return area
-    def obtenerGeneratrizTR(self,radio2):
-        g = (super().obtenerGeneratriz() * radio2)/self.radio
-        return super().obtenerGeneratriz() - g
+    def obtenerGeneratrizTR(self,radio2,altura):
+        radio3 = self.radio - radio2
+        g = math.sqrt(altura**2+self.radio3**2)
+        return g
     def aCadea(self):
         cadea = super().toString() + "\n\t Radio : " + str(self.radio) + "\n\t Altura : " + str(self.altura)
         return cadea
