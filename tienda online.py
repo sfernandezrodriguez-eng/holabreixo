@@ -1,7 +1,26 @@
 
 
+class Pedido:
+    def __init__(self,cestaProducto,cliente,data):
+        self.__cestaProducto = self.setCestaProducto(cestaProducto)
+        self.__cliente = self.setCliente(cliente)
+        self.__data = self.setData(data)
+
+    def setCestaProducto(self,cestaProducto):
+
+    def setCliente(self,cliente):
 
 
+    def setData(self, data):
+        if isinstance(data, str):
+            if len(data) == 8 and data[2]== "/" and data[5] == "/":
+                return data
+            else:
+                data = None
+                return data
+        else:
+            data = None
+            return data
 
 
 
