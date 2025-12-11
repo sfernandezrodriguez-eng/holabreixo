@@ -1,6 +1,8 @@
 
 
 
+
+
 class Producto:
     def __init__(self,nome,prezo,cantStock):
         self.__nome=self.setNome(nome)
@@ -41,14 +43,20 @@ class Producto:
         return self.__prezo
     def getCantStock(self,):
         return self.__cantStock
-    def decrementarStock(self,cantStock):
-         self.__cantStock = self.__cantStock - cantStock
+    def decrementarStock(self,cantidade):
+         if self.__cantStock > cantidade:
+            self.__cantStock -= cantidade
+            return True
+         else:
+            return False
 
-    def incrementarStock(self,cantStock):
-        self.__cantStock = self.__cantStock + cantStock
+    def incrementarStock(self,cantidade):
+        self.__cantStock += cantidade
+        return True
     def aCadea(self):
         cadea = "\n\t nome : " + str(self.__nome) + "\n\t prezo: " + str(self.__prezo) + "\n\t cantStock: " + str(self.__cantStock)
         return cadea
 
 horario = Producto("Juan",44,5)
 print( horario.incrementarStock(5) ,horario.aCadea())
+
